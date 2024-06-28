@@ -41,3 +41,32 @@ const jokeByType = (type, n) => {
 const jokeById = (id) => (jokes.filter(jk => jk.id === id)[0]);
 
 module.exports = { jokes, randomJoke, randomN, randomTen, randomSelect, jokeById, jokeByType };
+
+/**
+ * Added.
+ * @param {*} data 
+ * @param {*} page 
+ * @param {*} limit 
+ * @param {*} sort 
+ * @returns 
+ */
+const paginateAndSort = (data, page = 1, limit = 10, sort = '') => {
+  // Aplicar la ordenación si es especificada
+  if (sort === 'asc') {
+    data = data.sort((a, b) => a.id - b.id);
+  } else if (sort === 'desc') {
+    data = data.sort((a, b) => b.id - a.id);
+  }
+
+  // Calcular la paginación
+  const offset = (page - 1) * limit;
+  const paginatedData = data.slice(offset, offset + limit);
+
+  return {
+    currentPage: page,
+    perPage: limit,
+    totalItems: data.length,
+    totalPages: Math.ceil(data.length / limit),
+    data: paginatedData
+  };
+};
