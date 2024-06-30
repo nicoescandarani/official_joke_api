@@ -2,597 +2,716 @@
   {
     "type": "general",
     "setup": "What did the fish say when it hit the wall?",
-    "punchline": "Dam."
+    "punchline": "Dam.",
+    "likes": 0
   },
   {
     "type": "general",
     "setup": "How do you make a tissue dance?",
-    "punchline": "You put a little boogie on it."
+    "punchline": "You put a little boogie on it.",
+    "likes": 1
   },
   {
     "type": "general",
     "setup": "What's Forrest Gump's password?",
-    "punchline": "1Forrest1"
+    "punchline": "1Forrest1",
+    "likes": 9
   },
   {
     "type": "general",
     "setup": "What do you call a belt made out of watches?",
-    "punchline": "A waist of time."
+    "punchline": "A waist of time.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Why can't bicycles stand on their own?",
-    "punchline": "They are two tired"
+    "punchline": "They are two tired",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "How does a train eat?",
-    "punchline": "It goes chew, chew"
+    "punchline": "It goes chew, chew",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "What do you call a singing Laptop?",
-    "punchline": "A Dell"
+    "punchline": "A Dell",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "How many lips does a flower have?",
-    "punchline": "Tulips"
+    "punchline": "Tulips",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "How do you organize an outer space party?",
-    "punchline": "You planet"
+    "punchline": "You planet",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "What kind of shoes does a thief wear?",
-    "punchline": "Sneakers"
+    "punchline": "Sneakers",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "What's the best time to go to the dentist?",
-    "punchline": "Tooth hurty."
+    "punchline": "Tooth hurty.",
+    "likes": null
   },
   {
     "type": "knock-knock",
     "setup": "Knock knock. \n Who's there? \n A broken pencil. \n A broken pencil who?",
-    "punchline": "Never mind. It's pointless."
+    "punchline": "Never mind. It's pointless.",
+    "likes": null
   },
   {
     "type": "knock-knock",
     "setup": "Knock knock. \n Who's there? \n Cows go. \n Cows go who?",
-    "punchline": "No, cows go moo."
+    "punchline": "No, cows go moo.",
+    "likes": null
   },
   {
     "type": "knock-knock",
     "setup": "Knock knock. \n Who's there? \n Little old lady. \n Little old lady who?",
-    "punchline": "I didn't know you could yodel!"
+    "punchline": "I didn't know you could yodel!",
+    "likes": null
   },
   {
     "type": "programming",
     "setup": "What's the best thing about a Boolean?",
-    "punchline": "Even if you're wrong, you're only off by a bit."
+    "punchline": "Even if you're wrong, you're only off by a bit.",
+    "likes": null
   },
   {
     "type": "programming",
     "setup": "What's the object-oriented way to become wealthy?",
-    "punchline": "Inheritance"
+    "punchline": "Inheritance",
+    "likes": null
   },
   {
     "type": "programming",
     "setup": "Where do programmers like to hangout?",
-    "punchline": "The Foo Bar."
+    "punchline": "The Foo Bar.",
+    "likes": null
   },
   {
     "type": "programming",
     "setup": "Why did the programmer quit his job?",
-    "punchline": "Because he didn't get arrays."
+    "punchline": "Because he didn't get arrays.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you hear about the two silk worms in a race?",
-    "punchline": "It ended in a tie."
+    "punchline": "It ended in a tie.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "What do you call a laughing motorcycle?",
-    "punchline": "A Yamahahahaha."
+    "punchline": "A Yamahahahaha.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "A termite walks into a bar and says...",
-    "punchline": "'Where is the bar tended?'"
+    "punchline": "'Where is the bar tended?'",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "What does C.S. Lewis keep at the back of his wardrobe?",
-    "punchline": "Narnia business!"
+    "punchline": "Narnia business!",
+    "likes": null
   },
   {
     "type": "programming",
     "setup": "Why do programmers always mix up Halloween and Christmas?",
-    "punchline": "Because Oct 31 == Dec 25"
+    "punchline": "Because Oct 31 == Dec 25",
+    "likes": null
   },
   {
     "type": "programming",
     "setup": "A SQL query walks into a bar, walks up to two tables and asks...",
-    "punchline": "'Can I join you?'"
+    "punchline": "'Can I join you?'",
+    "likes": null
   },
   {
     "type": "programming",
     "setup": "How many programmers does it take to change a lightbulb?",
-    "punchline": "None that's a hardware problem"
+    "punchline": "None that's a hardware problem",
+    "likes": null
   },
   {
     "type": "programming",
     "setup": "If you put a million monkeys at a million keyboards, one of them will eventually write a Java program",
-    "punchline": "the rest of them will write Perl"
+    "punchline": "the rest of them will write Perl",
+    "likes": null
   },
   {
     "type": "programming",
     "setup": "['hip', 'hip']",
-    "punchline": "(hip hip array)"
+    "punchline": "(hip hip array)",
+    "likes": null
   },
   {
     "type": "programming",
     "setup": "To understand what recursion is...",
-    "punchline": "You must first understand what recursion is"
+    "punchline": "You must first understand what recursion is",
+    "likes": null
   },
   {
     "type": "programming",
     "setup": "There are 10 types of people in this world...",
-    "punchline": "Those who understand binary and those who don't"
+    "punchline": "Those who understand binary and those who don't",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "What did the duck say when he bought lipstick?",
-    "punchline": "Put it on my bill"
+    "punchline": "Put it on my bill",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "What happens to a frog's car when it breaks down?",
-    "punchline": "It gets toad away"
+    "punchline": "It gets toad away",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "did you know the first French fries weren't cooked in France?",
-    "punchline": "they were cooked in Greece"
+    "punchline": "they were cooked in Greece",
+    "likes": null
   },
   {
     "type": "programming",
     "setup": "Which song would an exception sing?",
-    "punchline": "Can't catch me - Avicii"
+    "punchline": "Can't catch me - Avicii",
+    "likes": null
   },
   {
     "type": "knock-knock",
     "setup": "Knock knock. \n Who's there? \n Opportunity.",
-    "punchline": "That is impossible. Opportunity doesn’t come knocking twice!"
+    "punchline": "That is impossible. Opportunity doesn’t come knocking twice!",
+    "likes": null
   },
   {
     "type": "programming",
     "setup": "Why do Java programmers wear glasses?",
-    "punchline": "Because they don't C#."
+    "punchline": "Because they don't C#.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Why did the mushroom get invited to the party?",
-    "punchline": "Because he was a fungi."
+    "punchline": "Because he was a fungi.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Do you know what the word 'was' was initially?",
-    "punchline": "Before was was was was was is."
+    "punchline": "Before was was was was was is.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "I'm reading a book about anti-gravity...",
-    "punchline": "It's impossible to put down"
+    "punchline": "It's impossible to put down",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "If you're American when you go into the bathroom, and American when you come out, what are you when you're in there?",
-    "punchline": "European"
+    "punchline": "European",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Want to hear a joke about a piece of paper?",
-    "punchline": "Never mind...it's tearable"
+    "punchline": "Never mind...it's tearable",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "I just watched a documentary about beavers.",
-    "punchline": "It was the best dam show I ever saw"
+    "punchline": "It was the best dam show I ever saw",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "If you see a robbery at an Apple Store...",
-    "punchline": "Does that make you an iWitness?"
+    "punchline": "Does that make you an iWitness?",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "A ham sandwhich walks into a bar and orders a beer. The bartender says...",
-    "punchline": "I'm sorry, we don't serve food here"
+    "punchline": "I'm sorry, we don't serve food here",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Why did the Clydesdale give the pony a glass of water?",
-    "punchline": "Because he was a little horse"
+    "punchline": "Because he was a little horse",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "If you boil a clown...",
-    "punchline": "Do you get a laughing stock?"
+    "punchline": "Do you get a laughing stock?",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Finally realized why my plant sits around doing nothing all day...",
-    "punchline": "He loves his pot."
+    "punchline": "He loves his pot.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Don't look at the eclipse through a colander.",
-    "punchline": "You'll strain your eyes."
+    "punchline": "You'll strain your eyes.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "I bought some shoes from a drug dealer.",
-    "punchline": "I don't know what he laced them with, but I was tripping all day!"
+    "punchline": "I don't know what he laced them with, but I was tripping all day!",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Why do chicken coops only have two doors?",
-    "punchline": "Because if they had four, they would be chicken sedans"
+    "punchline": "Because if they had four, they would be chicken sedans",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "What do you call a factory that sells passable products?",
-    "punchline": "A satisfactory"
+    "punchline": "A satisfactory",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "When a dad drives past a graveyard: Did you know that's a popular cemetery?",
-    "punchline": "Yep, people are just dying to get in there"
+    "punchline": "Yep, people are just dying to get in there",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Why did the invisible man turn down the job offer?",
-    "punchline": "He couldn't see himself doing it"
+    "punchline": "He couldn't see himself doing it",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "How do you make holy water?",
-    "punchline": "You boil the hell out of it"
+    "punchline": "You boil the hell out of it",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "I had a dream that I was a muffler last night.",
-    "punchline": "I woke up exhausted!"
+    "punchline": "I woke up exhausted!",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Why is peter pan always flying?",
-    "punchline": "Because he neverlands"
+    "punchline": "Because he neverlands",
+    "likes": null
   },
   {
     "type": "programming",
     "setup": "How do you check if a webpage is HTML5?",
-    "punchline": "Try it out on Internet Explorer"
+    "punchline": "Try it out on Internet Explorer",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "What do you call a cow with no legs?",
-    "punchline": "Ground beef!"
+    "punchline": "Ground beef!",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "I dropped a pear in my car this morning.",
-    "punchline": "You should drop another one, then you would have a pair."
+    "punchline": "You should drop another one, then you would have a pair.",
+    "likes": null
   },
   {
     "type": "programming",
     "setup": "Lady: How do I spread love in this cruel world?",
-    "punchline": "Random Dude: [...💘]"
+    "punchline": "Random Dude: [...💘]",
+    "likes": null
   },
   {
     "type": "programming",
     "setup": "A user interface is like a joke.",
-    "punchline": "If you have to explain it then it is not that good."
+    "punchline": "If you have to explain it then it is not that good.",
+    "likes": null
   },
   {
     "type": "knock-knock",
     "setup": "Knock knock. \n Who's there? \n Hatch. \n Hatch who?",
-    "punchline": "Bless you!"
+    "punchline": "Bless you!",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "What do you call sad coffee?",
-    "punchline": "Despresso."
+    "punchline": "Despresso.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Why did the butcher work extra hours at the shop?",
-    "punchline": "To make ends meat."
+    "punchline": "To make ends meat.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you hear about the hungry clock?",
-    "punchline": "It went back four seconds."
+    "punchline": "It went back four seconds.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Well...",
-    "punchline": "That’s a deep subject."
+    "punchline": "That’s a deep subject.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you hear the story about the cheese that saved the world?",
-    "punchline": "It was legend dairy."
+    "punchline": "It was legend dairy.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you watch the new comic book movie?",
-    "punchline": "It was very graphic!"
+    "punchline": "It was very graphic!",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "I started a new business making yachts in my attic this year...",
-    "punchline": "The sails are going through the roof."
+    "punchline": "The sails are going through the roof.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "I got hit in the head by a soda can, but it didn't hurt that much...",
-    "punchline": "It was a soft drink."
+    "punchline": "It was a soft drink.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "I can't tell if i like this blender...",
-    "punchline": "It keeps giving me mixed results."
+    "punchline": "It keeps giving me mixed results.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "I couldn't get a reservation at the library...",
-    "punchline": "They were fully booked."
+    "punchline": "They were fully booked.",
+    "likes": null
   },
   {
     "type": "programming",
     "setup": "I was gonna tell you a joke about UDP...",
-    "punchline": "...but you might not get it."
+    "punchline": "...but you might not get it.",
+    "likes": null
   },
   {
     "type": "programming",
     "setup": "The punchline often arrives before the set-up.",
-    "punchline": "Do you know the problem with UDP jokes?"
+    "punchline": "Do you know the problem with UDP jokes?",
+    "likes": null
   },
   {
     "type": "programming",
     "setup": "Why do C# and Java developers keep breaking their keyboards?",
-    "punchline": "Because they use a strongly typed language."
+    "punchline": "Because they use a strongly typed language.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "What do you give to a lemon in need?",
-    "punchline": "Lemonaid."
+    "punchline": "Lemonaid.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Never take advice from electrons.",
-    "punchline": "They are always negative."
+    "punchline": "They are always negative.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Hey, dad, did you get a haircut?",
-    "punchline": "No, I got them all cut."
+    "punchline": "No, I got them all cut.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "What time is it?",
-    "punchline": "I don't know... it keeps changing."
+    "punchline": "I don't know... it keeps changing.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "A weasel walks into a bar. The bartender says, \"Wow, I've never served a weasel before. What can I get for you?\"",
-    "punchline": "Pop,goes the weasel."
+    "punchline": "Pop,goes the weasel.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Bad at golf?",
-    "punchline": "Join the club."
+    "punchline": "Join the club.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Can a kangaroo jump higher than the Empire State Building?",
-    "punchline": "Of course. The Empire State Building can't jump."
+    "punchline": "Of course. The Empire State Building can't jump.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Can February march?",
-    "punchline": "No, but April may."
+    "punchline": "No, but April may.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Can I watch the TV?",
-    "punchline": "Yes, but don’t turn it on."
+    "punchline": "Yes, but don’t turn it on.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Dad, can you put my shoes on?",
-    "punchline": "I don't think they'll fit me."
+    "punchline": "I don't think they'll fit me.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you hear about the bread factory burning down?",
-    "punchline": "They say the business is toast."
+    "punchline": "They say the business is toast.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you hear about the chameleon who couldn't change color?",
-    "punchline": "They had a reptile dysfunction."
+    "punchline": "They had a reptile dysfunction.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you hear about the cheese factory that exploded in France?",
-    "punchline": "There was nothing left but de Brie."
+    "punchline": "There was nothing left but de Brie.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you hear about the cow who jumped over the barbed wire fence?",
-    "punchline": "It was udder destruction."
+    "punchline": "It was udder destruction.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you hear about the guy who invented Lifesavers?",
-    "punchline": "They say he made a mint."
+    "punchline": "They say he made a mint.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you hear about the guy whose whole left side was cut off?",
-    "punchline": "He's all right now."
+    "punchline": "He's all right now.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you hear about the kidnapping at school?",
-    "punchline": "It's ok, he woke up."
+    "punchline": "It's ok, he woke up.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you hear about the Mexican train killer?",
-    "punchline": "He had loco motives"
+    "punchline": "He had loco motives",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you hear about the new restaurant on the moon?",
-    "punchline": "The food is great, but there’s just no atmosphere."
+    "punchline": "The food is great, but there’s just no atmosphere.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you hear about the runner who was criticized?",
-    "punchline": "He just took it in stride"
+    "punchline": "He just took it in stride",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you hear about the scientist who was lab partners with a pot of boiling water?",
-    "punchline": "He had a very esteemed colleague."
+    "punchline": "He had a very esteemed colleague.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you hear about the submarine industry?",
-    "punchline": "It really took a dive..."
+    "punchline": "It really took a dive...",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you hear that David lost his ID in prague?",
-    "punchline": "Now we just have to call him Dav."
+    "punchline": "Now we just have to call him Dav.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you hear that the police have a warrant out on a midget psychic ripping people off?",
-    "punchline": "It reads \"Small medium at large.\""
+    "punchline": "It reads \"Small medium at large.\"",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you hear the joke about the wandering nun?",
-    "punchline": "She was a roman catholic."
+    "punchline": "She was a roman catholic.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you hear the news?",
-    "punchline": "FedEx and UPS are merging. They’re going to go by the name Fed-Up from now on."
+    "punchline": "FedEx and UPS are merging. They’re going to go by the name Fed-Up from now on.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you hear the one about the guy with the broken hearing aid?",
-    "punchline": "Neither did he."
+    "punchline": "Neither did he.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you know crocodiles could grow up to 15 feet?",
-    "punchline": "But most just have 4."
+    "punchline": "But most just have 4.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "What do ghosts call their true love?",
-    "punchline": "Their ghoul-friend"
+    "punchline": "Their ghoul-friend",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you know that protons have mass?",
-    "punchline": "I didn't even know they were catholic."
+    "punchline": "I didn't even know they were catholic.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Did you know you should always take an extra pair of pants golfing?",
-    "punchline": "Just in case you get a hole in one."
+    "punchline": "Just in case you get a hole in one.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Do I enjoy making courthouse puns?",
-    "punchline": "Guilty"
+    "punchline": "Guilty",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Do you know where you can get chicken broth in bulk?",
-    "punchline": "The stock market."
+    "punchline": "The stock market.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Do you want a brief explanation of what an acorn is?",
-    "punchline": "In a nutshell, it's an oak tree."
+    "punchline": "In a nutshell, it's an oak tree.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Ever wondered why bees hum?",
-    "punchline": "It's because they don't know the words."
+    "punchline": "It's because they don't know the words.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Have you ever heard of a music group called Cellophane?",
-    "punchline": "They mostly wrap."
+    "punchline": "They mostly wrap.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Have you heard of the band 1023MB?",
-    "punchline": "They haven't got a gig yet."
+    "punchline": "They haven't got a gig yet.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "Have you heard the rumor going around about butter?",
-    "punchline": "Never mind, I shouldn't spread it."
+    "punchline": "Never mind, I shouldn't spread it.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "How are false teeth like stars?",
-    "punchline": "They come out at night!"
+    "punchline": "They come out at night!",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "How can you tell a vampire has a cold?",
-    "punchline": "They start coffin."
+    "punchline": "They start coffin.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "How come a man driving a train got struck by lightning?",
-    "punchline": "He was a good conductor."
+    "punchline": "He was a good conductor.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "How come the stadium got hot after the game?",
-    "punchline": "Because all of the fans left."
+    "punchline": "Because all of the fans left.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "How did Darth Vader know what Luke was getting for Christmas?",
-    "punchline": "He felt his presents."
+    "punchline": "He felt his presents.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "How did the hipster burn the roof of his mouth?",
-    "punchline": "He ate the pizza before it was cool."
+    "punchline": "He ate the pizza before it was cool.",
+    "likes": null
   },
   {
     "type": "general",
     "setup": "How do hens stay fit?",
-    "punchline": "They always egg-cercise!"
+    "punchline": "They always egg-cercise!",
+    "likes": null
   },
   {
     "type": "general",

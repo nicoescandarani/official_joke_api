@@ -40,25 +40,37 @@ const jokeByType = (type, n) => {
  */
 const jokeById = (id) => (jokes.filter(jk => jk.id === id)[0]);
 
-module.exports = { jokes, randomJoke, randomN, randomTen, randomSelect, jokeById, jokeByType };
+/**
+ * Added.
+ * @param {*} jokes 
+ * @param {*} order
+ */
+const sortByLikes = (jokes, order = 'asc') => {
+  return jokes.sort((a, b) => {
+    const likesA = a.likes === null || a.likes === undefined ? -1 : a.likes;
+    const likesB = b.likes === null || b.likes === undefined ? -1 : b.likes;
+    if (order === 'asc') {
+      return likesA - likesB;
+    } else {
+      return likesB - likesA;
+    }
+  });
+}
 
 /**
  * Added.
  * @param {*} data 
  * @param {*} page 
  * @param {*} limit 
- * @param {*} sort 
- * @returns 
+ * @param {*} sort
  */
 const paginateAndSort = (data, page = 1, limit = 10, sort = '') => {
-  // Aplicar la ordenación si es especificada
   if (sort === 'asc') {
     data = data.sort((a, b) => a.id - b.id);
   } else if (sort === 'desc') {
     data = data.sort((a, b) => b.id - a.id);
   }
 
-  // Calcular la paginación
   const offset = (page - 1) * limit;
   const paginatedData = data.slice(offset, offset + limit);
 
@@ -70,3 +82,5 @@ const paginateAndSort = (data, page = 1, limit = 10, sort = '') => {
     data: paginatedData
   };
 };
+
+module.exports = { jokes, randomJoke, randomN, randomTen, randomSelect, jokeById, jokeByType, sortByLikes, paginateAndSort};

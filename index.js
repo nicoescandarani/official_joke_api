@@ -1,49 +1,63 @@
 const express = require('express');
 const LimitingMiddleware = require('limiting-middleware');
-/**
- * Added.
- */
-const { jokes, randomJoke, randomTen, randomSelect, jokeByType, jokeById } = require('./handler');
+const cors = require('cors');
+
+const { jokes, randomJoke, randomTen, randomSelect, jokeByType, jokeById, sortByLikes, paginateAndSort } = require('./handler');
 
 const app = express();
+
+app.use(cors());
 
 app.use(new LimitingMiddleware().limitByIp());
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
   next();
 });
 
+app.use(express.json());
+
 /**
  * Added.
- * Returns a paginated array of all jokes.
+ * Returns a paginated array of jokes, optionally filtered by searchText.
  */
-app.get('/jokes/all', (req, res) => {
-  const page = parseInt(req.query.page) || 1;
-  const limit = parseInt(req.query.limit) || 10;
-  const sort = req.query.sort; // 'asc', 'desc', or not present.
+app.get('/jokes', (req, res) => {
+  const { searchText = '', page = 1, limit = 10, sort = '' } = req.query;
+  const pageInt = parseInt(page);
+  const limitInt = parseInt(limit);
+  const offset = (pageInt - 1) * limitInt;
 
-  let sortedJokes = jokes;
+  let filteredJokes = jokes.slice();
 
-  // Apply sorting if specified.
-  if (sort === 'asc') {
-    sortedJokes = jokes.sort((a, b) => a.id - b.id);
-  } else if (sort === 'desc') {
-    sortedJokes = jokes.sort((a, b) => b.id - a.id);
+  if (searchText) {
+    filteredJokes = filteredJokes.filter(joke =>
+      joke.setup.toLowerCase().includes(searchText.toLowerCase()) ||
+      joke.punchline.toLowerCase().includes(searchText.toLowerCase())
+    );
   }
 
-  const offset = (page - 1) * limit;
-  const paginatedJokes = sortedJokes.slice(offset, offset + limit);
+  if (sort === 'id_asc' || sort === 'id_desc') {
+    filteredJokes = filteredJokes.sort((a, b) => a.id - b.id);
+    if (sort === 'id_desc') {
+      filteredJokes.reverse();
+    }
+  } else if (sort && sort.startsWith('likes')) {
+    const order = sort.split('_')[1]; // 'asc' or 'desc'
+    filteredJokes = sortByLikes(filteredJokes, order);
+  }
+
+  const paginatedJokes = filteredJokes.slice(offset, offset + limitInt);
 
   res.json({
-    currentPage: page,
-    perPage: limit,
-    totalItems: jokes.length,
-    totalPages: Math.ceil(jokes.length / limit),
+    currentPage: pageInt,
+    perPage: limitInt,
+    totalItems: filteredJokes.length,
+    totalPages: Math.ceil(filteredJokes.length / limitInt),
     data: paginatedJokes
   });
 });
-
 
 app.get('/', (req, res) => {
   res.send('Try /random_joke, /random_ten, /jokes/random, or /jokes/ten');
@@ -67,7 +81,7 @@ app.get('/random_joke', (req, res) => {
 app.get('/random_ten', (req, res) => {
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 10;
-  const sort = req.query.sort; // 'asc' o 'desc'
+  const sort = req.query.sort; // 'id_asc' or 'id_desc'
 
   const result = paginateAndSort(jokes, page, limit, sort);
   res.json(result);
@@ -148,14 +162,9 @@ app.get('/jokes/:id', (req, res, next) => {
   }
 });
 
-/**
- * Added.
- * @returns a single joke object or undefined.
- */
 app.post('/jokes', (req, res) => {
   const { type, setup, punchline } = req.body;
 
-  // Verifica que todos los campos estén presentes
   if (!type) {
     return res.status(400).json({ message: "Type is required" });
   }
@@ -171,10 +180,6 @@ app.post('/jokes', (req, res) => {
   res.status(201).json(newJoke);
 });
 
-/**
- * Added.
- * @returns a single joke object or undefined.
- */
 app.put('/jokes/:id', (req, res) => {
   const { id } = req.params;
   const { type, setup, punchline } = req.body;
@@ -190,10 +195,40 @@ app.put('/jokes/:id', (req, res) => {
   res.json(joke);
 });
 
-/**
- * Added.
- * @returns a single joke object or undefined.
- */
+app.post('/jokes/:id/like', (req, res) => {
+  const { id } = req.params;
+  const joke = jokes.find(j => j.id === parseInt(id));
+
+  if (!joke) {
+    return res.status(404).json({ message: "Joke not found" });
+  }
+
+  if (joke.likes === null || joke.likes === undefined) {
+    joke.likes = 1;
+  } else {
+    joke.likes += 1;
+  }
+
+  res.json(joke);
+});
+
+app.post('/jokes/:id/dislike', (req, res) => {
+  const { id } = req.params;
+  const joke = jokes.find(j => j.id === parseInt(id));
+
+  if (!joke) {
+    return res.status(404).json({ message: "Joke not found" });
+  }
+
+  if (joke.likes === null || joke.likes === undefined) {
+    joke.likes = -1;
+  } else {
+    joke.likes -= 1;
+  }
+
+  res.json(joke);
+});
+
 app.delete('/jokes/:id', (req, res) => {
   const { id } = req.params;
   const index = jokes.findIndex(j => j.id === parseInt(id));
@@ -205,10 +240,6 @@ app.delete('/jokes/:id', (req, res) => {
   res.status(204).send();
 });
 
-/**
- * Added.
- * @returns a single joke object or undefined.
- */
 app.delete('/jokes', (req, res) => {
   const { ids } = req.body;
 
@@ -216,21 +247,14 @@ app.delete('/jokes', (req, res) => {
     return res.status(400).json({ message: "IDs must be provided in an array" });
   }
 
-  // Filters and verifies if all IDs exist.
   const jokesToDelete = jokes.filter(joke => ids.includes(joke.id));
   if (jokesToDelete.length !== ids.length) {
     return res.status(404).json({ message: "One or more jokes not found with the provided IDs" });
   }
 
-  // Proceed to delete the jokes.
   jokes = jokes.filter(joke => !ids.includes(joke.id));
   res.status(204).send();
 });
-
-/**
- * Added.
- */
-app.use(express.json());
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
