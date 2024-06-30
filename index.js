@@ -2,7 +2,7 @@ const express = require('express');
 const LimitingMiddleware = require('limiting-middleware');
 const cors = require('cors');
 
-const { jokes, randomJoke, randomTen, randomSelect, jokeByType, jokeById, sortByLikes, paginateAndSort } = require('./handler');
+const { jokes, randomJoke, randomTen, randomSelect, jokeByType, jokeById, sortByLikes, paginateAndSort, initializeLastJokeId, updateLastJokeId, getLastJokeId } = require('./handler');
 
 const app = express();
 
@@ -18,6 +18,11 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json());
+
+/**
+ * Initialize lastJokeId
+ */
+initializeLastJokeId();
 
 /**
  * Added.
@@ -175,7 +180,8 @@ app.post('/jokes', (req, res) => {
     return res.status(400).json({ message: "Punchline is required" });
   }
 
-  const newJoke = { id: ++lastJokeId, type, setup, punchline };
+  updateLastJokeId(); // Increment lastJokeId
+  const newJoke = { id: getLastJokeId(), type, setup, punchline };
   jokes.push(newJoke);
   res.status(201).json(newJoke);
 });

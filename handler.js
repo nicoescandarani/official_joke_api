@@ -1,11 +1,24 @@
 const jokes = require('./jokes/index.json');
 
 let lastJokeId = 0;
-jokes.forEach(jk => jk.id = ++lastJokeId);
+
+const initializeLastJokeId = () => {
+  jokes.forEach(jk => {
+    if (jk.id > lastJokeId) {
+      lastJokeId = jk.id;
+    }
+  });
+};
+
+const getLastJokeId = () => lastJokeId;
+
+const updateLastJokeId = () => {
+  lastJokeId++;
+};
 
 const randomJoke = () => {
   return jokes[Math.floor(Math.random() * jokes.length)];
-}
+};
 
 /**
  * Get N random jokes from a jokeArray
@@ -55,7 +68,7 @@ const sortByLikes = (jokes, order = 'asc') => {
       return likesB - likesA;
     }
   });
-}
+};
 
 /**
  * Added.
@@ -83,4 +96,4 @@ const paginateAndSort = (data, page = 1, limit = 10, sort = '') => {
   };
 };
 
-module.exports = { jokes, randomJoke, randomN, randomTen, randomSelect, jokeById, jokeByType, sortByLikes, paginateAndSort};
+module.exports = { jokes, randomJoke, randomN, randomTen, randomSelect, jokeById, jokeByType, sortByLikes, paginateAndSort, initializeLastJokeId, updateLastJokeId, getLastJokeId };
