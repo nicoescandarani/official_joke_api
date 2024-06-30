@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const jokes = require('./jokes/index.json');
 
 let lastJokeId = 0;
@@ -96,4 +98,8 @@ const paginateAndSort = (data, page = 1, limit = 10, sort = '') => {
   };
 };
 
-module.exports = { jokes, randomJoke, randomN, randomTen, randomSelect, jokeById, jokeByType, sortByLikes, paginateAndSort, initializeLastJokeId, updateLastJokeId, getLastJokeId };
+const saveJokes = () => {
+  fs.writeFileSync(path.resolve(__dirname, './jokes/index.json'), JSON.stringify(jokes, null, 2), 'utf-8');
+};
+
+module.exports = { jokes, randomJoke, randomN, randomTen, randomSelect, jokeById, jokeByType, sortByLikes, paginateAndSort, initializeLastJokeId, updateLastJokeId, getLastJokeId, saveJokes };

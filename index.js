@@ -2,7 +2,7 @@ const express = require('express');
 const LimitingMiddleware = require('limiting-middleware');
 const cors = require('cors');
 
-const { jokes, randomJoke, randomTen, randomSelect, jokeByType, jokeById, sortByLikes, paginateAndSort, initializeLastJokeId, updateLastJokeId, getLastJokeId } = require('./handler');
+const { jokes, randomJoke, randomTen, randomSelect, jokeByType, jokeById, sortByLikes, paginateAndSort, initializeLastJokeId, updateLastJokeId, getLastJokeId, saveJokes } = require('./handler');
 
 const app = express();
 
@@ -183,6 +183,7 @@ app.post('/jokes', (req, res) => {
   updateLastJokeId(); // Increment lastJokeId
   const newJoke = { id: getLastJokeId(), type, setup, punchline };
   jokes.push(newJoke);
+  saveJokes(); // Save changes to the file
   res.status(201).json(newJoke);
 });
 
@@ -197,6 +198,7 @@ app.put('/jokes/:id', (req, res) => {
   joke.type = type || joke.type;
   joke.setup = setup || joke.setup;
   joke.punchline = punchline || joke.punchline;
+  saveJokes(); // Save changes to the file
 
   res.json(joke);
 });
@@ -214,6 +216,7 @@ app.post('/jokes/:id/like', (req, res) => {
   } else {
     joke.likes += 1;
   }
+  saveJokes(); // Save changes to the file
 
   res.json(joke);
 });
@@ -231,6 +234,7 @@ app.post('/jokes/:id/dislike', (req, res) => {
   } else {
     joke.likes -= 1;
   }
+  saveJokes(); // Save changes to the file
 
   res.json(joke);
 });
@@ -243,6 +247,8 @@ app.delete('/jokes/:id', (req, res) => {
   }
 
   jokes.splice(index, 1);
+  saveJokes(); // Save changes to the file
+
   res.status(204).send();
 });
 
@@ -259,6 +265,8 @@ app.delete('/jokes', (req, res) => {
   }
 
   jokes = jokes.filter(joke => !ids.includes(joke.id));
+  saveJokes(); // Save changes to the file
+
   res.status(204).send();
 });
 
