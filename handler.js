@@ -1,11 +1,26 @@
+const fs = require('fs');
+const path = require('path');
 const jokes = require('./jokes/index.json');
 
 let lastJokeId = 0;
-jokes.forEach(jk => jk.id = ++lastJokeId);
+
+const initializeLastJokeId = () => {
+  jokes.forEach(jk => {
+    if (jk.id > lastJokeId) {
+      lastJokeId = jk.id;
+    }
+  });
+};
+
+const getLastJokeId = () => lastJokeId;
+
+const updateLastJokeId = () => {
+  lastJokeId++;
+};
 
 const randomJoke = () => {
   return jokes[Math.floor(Math.random() * jokes.length)];
-}
+};
 
 /**
  * Get N random jokes from a jokeArray
@@ -40,4 +55,51 @@ const jokeByType = (type, n) => {
  */
 const jokeById = (id) => (jokes.filter(jk => jk.id === id)[0]);
 
-module.exports = { jokes, randomJoke, randomN, randomTen, randomSelect, jokeById, jokeByType };
+/**
+ * Added.
+ * @param {*} jokes 
+ * @param {*} order
+ */
+const sortByLikes = (jokes, order = 'asc') => {
+  return jokes.sort((a, b) => {
+    const likesA = a.likes === null || a.likes === undefined ? -1 : a.likes;
+    const likesB = b.likes === null || b.likes === undefined ? -1 : b.likes;
+    if (order === 'asc') {
+      return likesA - likesB;
+    } else {
+      return likesB - likesA;
+    }
+  });
+};
+
+/**
+ * Added.
+ * @param {*} data 
+ * @param {*} page 
+ * @param {*} limit 
+ * @param {*} sort
+ */
+const paginateAndSort = (data, page = 1, limit = 10, sort = '') => {
+  if (sort === 'asc') {
+    data = data.sort((a, b) => a.id - b.id);
+  } else if (sort === 'desc') {
+    data = data.sort((a, b) => b.id - a.id);
+  }
+
+  const offset = (page - 1) * limit;
+  const paginatedData = data.slice(offset, offset + limit);
+
+  return {
+    currentPage: page,
+    perPage: limit,
+    totalItems: data.length,
+    totalPages: Math.ceil(data.length / limit),
+    data: paginatedData
+  };
+};
+
+const saveJokes = () => {
+  fs.writeFileSync(path.resolve(__dirname, './jokes/index.json'), JSON.stringify(jokes, null, 2), 'utf-8');
+};
+
+module.exports = { jokes, randomJoke, randomN, randomTen, randomSelect, jokeById, jokeByType, sortByLikes, paginateAndSort, initializeLastJokeId, updateLastJokeId, getLastJokeId, saveJokes };
