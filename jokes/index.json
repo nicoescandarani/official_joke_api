@@ -1,86 +1,23 @@
 [
   {
     "type": "general",
-    "setup": "What did the fish say when it hit the wall?",
-    "punchline": "Dam.",
-    "likes": 0,
-    "id": 1
-  },
-  {
-    "type": "general",
-    "setup": "How do you make a tissue dance?",
-    "punchline": "You put a little boogie on it.",
-    "likes": 1,
-    "id": 2
-  },
-  {
-    "type": "general",
-    "setup": "What's Forrest Gump's password?",
-    "punchline": "1Forrest1",
-    "likes": 9,
-    "id": 3
-  },
-  {
-    "type": "general",
-    "setup": "What do you call a belt made out of watches?",
-    "punchline": "A waist of time.",
-    "likes": null,
-    "id": 4
-  },
-  {
-    "type": "general",
-    "setup": "Why can't bicycles stand on their own?",
-    "punchline": "They are two tired",
-    "likes": null,
-    "id": 5
-  },
-  {
-    "type": "general",
-    "setup": "How does a train eat?",
-    "punchline": "It goes chew, chew",
-    "likes": null,
-    "id": 6
-  },
-  {
-    "type": "general",
-    "setup": "What do you call a singing Laptop?",
-    "punchline": "A Dell",
-    "likes": null,
-    "id": 7
-  },
-  {
-    "type": "general",
-    "setup": "How many lips does a flower have?",
-    "punchline": "Tulips",
-    "likes": null,
-    "id": 8
-  },
-  {
-    "type": "general",
-    "setup": "How do you organize an outer space party?",
-    "punchline": "You planet",
-    "likes": null,
-    "id": 9
-  },
-  {
-    "type": "general",
     "setup": "What kind of shoes does a thief wear?",
     "punchline": "Sneakers",
-    "likes": null,
+    "likes": 1,
     "id": 10
   },
   {
     "type": "general",
     "setup": "What's the best time to go to the dentist?",
     "punchline": "Tooth hurty.",
-    "likes": null,
+    "likes": 1,
     "id": 11
   },
   {
     "type": "knock-knock",
     "setup": "Knock knock. \n Who's there? \n A broken pencil. \n A broken pencil who?",
     "punchline": "Never mind. It's pointless.",
-    "likes": null,
+    "likes": 1,
     "id": 12
   },
   {
@@ -94,21 +31,21 @@
     "type": "knock-knock",
     "setup": "Knock knock. \n Who's there? \n Little old lady. \n Little old lady who?",
     "punchline": "I didn't know you could yodel!",
-    "likes": null,
+    "likes": 1,
     "id": 14
   },
   {
     "type": "programming",
     "setup": "What's the best thing about a Boolean?",
     "punchline": "Even if you're wrong, you're only off by a bit.",
-    "likes": null,
+    "likes": 1,
     "id": 15
   },
   {
     "type": "programming",
     "setup": "What's the object-oriented way to become wealthy?",
     "punchline": "Inheritance",
-    "likes": null,
+    "likes": 1,
     "id": 16
   },
   {
@@ -157,7 +94,7 @@
     "type": "programming",
     "setup": "Why do programmers always mix up Halloween and Christmas?",
     "punchline": "Because Oct 31 == Dec 25",
-    "likes": null,
+    "likes": 1,
     "id": 23
   },
   {
@@ -388,7 +325,7 @@
     "type": "programming",
     "setup": "How do you check if a webpage is HTML5?",
     "punchline": "Try it out on Internet Explorer",
-    "likes": null,
+    "likes": 1,
     "id": 56
   },
   {
@@ -409,7 +346,7 @@
     "type": "programming",
     "setup": "Lady: How do I spread love in this cruel world?",
     "punchline": "Random Dude: [...💘]",
-    "likes": null,
+    "likes": 1,
     "id": 59
   },
   {
@@ -423,7 +360,7 @@
     "type": "knock-knock",
     "setup": "Knock knock. \n Who's there? \n Hatch. \n Hatch who?",
     "punchline": "Bless you!",
-    "likes": null,
+    "likes": 1,
     "id": 61
   },
   {
@@ -563,7 +500,7 @@
     "type": "general",
     "setup": "Can a kangaroo jump higher than the Empire State Building?",
     "punchline": "Of course. The Empire State Building can't jump.",
-    "likes": null,
+    "likes": 1,
     "id": 81
   },
   {
@@ -675,7 +612,7 @@
     "type": "general",
     "setup": "Did you hear that David lost his ID in prague?",
     "punchline": "Now we just have to call him Dav.",
-    "likes": null,
+    "likes": 1,
     "id": 97
   },
   {
@@ -1370,7 +1307,8 @@
     "type": "general",
     "setup": "What do you call a girl between two posts?",
     "punchline": "Annette.",
-    "id": 209
+    "id": 209,
+    "likes": 1
   },
   {
     "type": "general",
@@ -1436,7 +1374,8 @@
     "type": "general",
     "setup": "What do you call an Argentinian with a rubber toe?",
     "punchline": "Roberto",
-    "id": 220
+    "id": 220,
+    "likes": 1
   },
   {
     "type": "general",
@@ -2408,7 +2347,8 @@
     "type": "dad",
     "setup": "Why do fathers take an extra pair of socks when they go golfing?",
     "punchline": "In case they get a hole in one!",
-    "id": 382
+    "id": 382,
+    "likes": 1
   },
   {
     "type": "general",
@@ -2420,7 +2360,8 @@
     "type": "programming",
     "setup": "What did the Java code say to the C code?",
     "punchline": "You've got no class.",
-    "id": 384
+    "id": 384,
+    "likes": 1
   },
   {
     "type": "programming",
@@ -2474,7 +2415,8 @@
     "type": "programming",
     "setup": "A male developer often gets called as a Dev, then what would you call a female developer?",
     "punchline": "Devi.",
-    "id": 393
+    "id": 393,
+    "likes": 1
   },
   {
     "type": "general",
@@ -2486,7 +2428,8 @@
     "type": "programming",
     "setup": "Where did the API go to eat?",
     "punchline": "To the RESTaurant.",
-    "id": 395
+    "id": 395,
+    "likes": 1
   },
   {
     "type": "general",
@@ -2534,13 +2477,15 @@
     "type": "general",
     "setup": "99.9% of the people are dumb!",
     "punchline": "Fortunately I belong to the remaining 1%",
-    "id": 403
+    "id": 403,
+    "likes": 1
   },
   {
     "type": "programming",
     "setup": "I just got fired from my job at the keyboard factory.",
     "punchline": "They told me I wasn't putting in enough shifts.",
-    "id": 404
+    "id": 404,
+    "likes": 1
   },
   {
     "type": "general",
@@ -2556,8 +2501,15 @@
   },
   {
     "id": 407,
+    "type": "programming",
+    "setup": "Joke",
+    "punchline": "Test",
+    "likes": 1
+  },
+  {
+    "id": 408,
     "type": "general",
-    "setup": "aa",
-    "punchline": "aaaa"
+    "setup": "Another",
+    "punchline": "Joke"
   }
 ]
