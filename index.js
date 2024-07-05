@@ -29,12 +29,16 @@ initializeLastJokeId();
  * Returns a paginated array of jokes, optionally filtered by searchText.
  */
 app.get('/jokes', (req, res) => {
-  const { searchText = '', page = 1, limit = 10, sort = '' } = req.query;
+  const { searchText = '', page = 1, limit = 10, sort = '', jokeType } = req.query;
   const pageInt = parseInt(page);
   const limitInt = parseInt(limit);
   const offset = (pageInt - 1) * limitInt;
 
   let filteredJokes = jokes.slice();
+
+  if (jokeType && jokeType !== '') {
+    filteredJokes = filteredJokes.filter(joke => joke.type.toLowerCase() === jokeType.toLowerCase());
+  }
 
   if (searchText) {
     filteredJokes = filteredJokes.filter(joke =>

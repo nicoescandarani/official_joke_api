@@ -17,7 +17,7 @@
     "type": "knock-knock",
     "setup": "Knock knock. \n Who's there? \n A broken pencil. \n A broken pencil who?",
     "punchline": "Never mind. It's pointless.",
-    "likes": 1,
+    "likes": 2,
     "id": 12
   },
   {
@@ -2510,6 +2510,14 @@
     "id": 408,
     "type": "general",
     "setup": "Another",
-    "punchline": "Joke"
+    "punchline": "Joke",
+    "likes": 1
+  },
+  {
+    "id": 410,
+    "type": "knock-knock",
+    "setup": "Other",
+    "punchline": "Joke",
+    "likes": 1
   }
 ]
