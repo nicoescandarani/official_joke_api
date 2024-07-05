@@ -149,15 +149,18 @@ app.get('/jokes/ten', (req, res) => {
     );
   }
 
+  // Ensure we always return exactly 10 jokes, or fewer if there aren't enough jokes available.
   const selectedJokes = randomN(filteredJokes, 10);
+
   res.json({
     currentPage: 1,
     perPage: 10,
-    totalItems: filteredJokes.length,
-    totalPages: Math.ceil(filteredJokes.length / 10),
+    totalItems: selectedJokes.length,
+    totalPages: 1,
     data: selectedJokes
   });
 });
+
 
 
 app.get('/jokes/:type/random', (req, res) => {
