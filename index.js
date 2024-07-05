@@ -149,7 +149,6 @@ app.get('/jokes/ten', (req, res) => {
     );
   }
 
-  // Ensure we always return exactly 10 jokes, or fewer if there aren't enough jokes available.
   const selectedJokes = randomN(filteredJokes, 10);
 
   res.json({
