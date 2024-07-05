@@ -2,7 +2,7 @@ const express = require('express');
 const LimitingMiddleware = require('limiting-middleware');
 const cors = require('cors');
 
-const { jokes, randomJoke, randomTen, randomSelect, jokeByType, jokeById, sortByLikes, paginateAndSort, initializeLastJokeId, updateLastJokeId, getLastJokeId, saveJokes } = require('./handler');
+const { jokes, randomN, randomJoke, randomSelect, jokeByType, jokeById, sortByLikes, paginateAndSort, initializeLastJokeId, updateLastJokeId, getLastJokeId, saveJokes } = require('./handler');
 
 const app = express();
 
@@ -29,12 +29,16 @@ initializeLastJokeId();
  * Returns a paginated array of jokes, optionally filtered by searchText.
  */
 app.get('/jokes', (req, res) => {
-  const { searchText = '', page = 1, limit = 10, sort = '' } = req.query;
+  const { searchText = '', page = 1, limit = 10, sort = '', jokeType } = req.query;
   const pageInt = parseInt(page);
   const limitInt = parseInt(limit);
   const offset = (pageInt - 1) * limitInt;
 
   let filteredJokes = jokes.slice();
+
+  if (jokeType && jokeType !== '') {
+    filteredJokes = filteredJokes.filter(joke => joke.type.toLowerCase() === jokeType.toLowerCase());
+  }
 
   if (searchText) {
     filteredJokes = filteredJokes.filter(joke =>
@@ -93,7 +97,18 @@ app.get('/random_ten', (req, res) => {
 });
 
 app.get('/jokes/random', (req, res) => {
-  const joke = randomJoke();
+  const { searchText = '' } = req.query;
+
+  let filteredJokes = jokes.slice();
+
+  if (searchText) {
+    filteredJokes = filteredJokes.filter(joke =>
+      joke.setup.toLowerCase().includes(searchText.toLowerCase()) ||
+      joke.punchline.toLowerCase().includes(searchText.toLowerCase())
+    );
+  }
+
+  const joke = filteredJokes[Math.floor(Math.random() * filteredJokes.length)];
   res.json({
     currentPage: 1,
     perPage: 1,
@@ -123,15 +138,30 @@ app.get("/jokes/random(/*)?", (req, res) => {
 });
 
 app.get('/jokes/ten', (req, res) => {
-  const jokes = randomTen();
+  const { searchText = '' } = req.query;
+
+  let filteredJokes = jokes.slice();
+
+  if (searchText) {
+    filteredJokes = filteredJokes.filter(joke =>
+      joke.setup.toLowerCase().includes(searchText.toLowerCase()) ||
+      joke.punchline.toLowerCase().includes(searchText.toLowerCase())
+    );
+  }
+
+  // Ensure we always return exactly 10 jokes, or fewer if there aren't enough jokes available.
+  const selectedJokes = randomN(filteredJokes, 10);
+
   res.json({
     currentPage: 1,
     perPage: 10,
-    totalItems: jokes.length,
+    totalItems: selectedJokes.length,
     totalPages: 1,
-    data: jokes
+    data: selectedJokes
   });
 });
+
+
 
 app.get('/jokes/:type/random', (req, res) => {
   const type = req.params.type;
