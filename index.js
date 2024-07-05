@@ -2,7 +2,7 @@ const express = require('express');
 const LimitingMiddleware = require('limiting-middleware');
 const cors = require('cors');
 
-const { jokes, randomJoke, randomTen, randomSelect, jokeByType, jokeById, sortByLikes, paginateAndSort, initializeLastJokeId, updateLastJokeId, getLastJokeId, saveJokes } = require('./handler');
+const { jokes, randomN, randomJoke, randomSelect, jokeByType, jokeById, sortByLikes, paginateAndSort, initializeLastJokeId, updateLastJokeId, getLastJokeId, saveJokes } = require('./handler');
 
 const app = express();
 
@@ -93,7 +93,18 @@ app.get('/random_ten', (req, res) => {
 });
 
 app.get('/jokes/random', (req, res) => {
-  const joke = randomJoke();
+  const { searchText = '' } = req.query;
+
+  let filteredJokes = jokes.slice();
+
+  if (searchText) {
+    filteredJokes = filteredJokes.filter(joke =>
+      joke.setup.toLowerCase().includes(searchText.toLowerCase()) ||
+      joke.punchline.toLowerCase().includes(searchText.toLowerCase())
+    );
+  }
+
+  const joke = filteredJokes[Math.floor(Math.random() * filteredJokes.length)];
   res.json({
     currentPage: 1,
     perPage: 1,
@@ -123,15 +134,27 @@ app.get("/jokes/random(/*)?", (req, res) => {
 });
 
 app.get('/jokes/ten', (req, res) => {
-  const jokes = randomTen();
+  const { searchText = '' } = req.query;
+
+  let filteredJokes = jokes.slice();
+
+  if (searchText) {
+    filteredJokes = filteredJokes.filter(joke =>
+      joke.setup.toLowerCase().includes(searchText.toLowerCase()) ||
+      joke.punchline.toLowerCase().includes(searchText.toLowerCase())
+    );
+  }
+
+  const selectedJokes = randomN(filteredJokes, 10);
   res.json({
     currentPage: 1,
     perPage: 10,
-    totalItems: jokes.length,
-    totalPages: 1,
-    data: jokes
+    totalItems: filteredJokes.length,
+    totalPages: Math.ceil(filteredJokes.length / 10),
+    data: selectedJokes
   });
 });
+
 
 app.get('/jokes/:type/random', (req, res) => {
   const type = req.params.type;

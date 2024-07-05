@@ -36,12 +36,8 @@ const randomN = (jokeArray, n) => {
     }
   }
 
-  return Array.from(randomIndicesSet).map(randomIndex => {
-    return jokeArray[randomIndex];
-  });
+  return Array.from(randomIndicesSet).map(randomIndex => jokeArray[randomIndex]);
 };
-
-const randomTen = () => randomN(jokes, 10);
 
 const randomSelect = (number) => randomN(jokes, number);
 
@@ -102,4 +98,4 @@ const saveJokes = () => {
   fs.writeFileSync(path.resolve(__dirname, './jokes/index.json'), JSON.stringify(jokes, null, 2), 'utf-8');
 };
 
-module.exports = { jokes, randomJoke, randomN, randomTen, randomSelect, jokeById, jokeByType, sortByLikes, paginateAndSort, initializeLastJokeId, updateLastJokeId, getLastJokeId, saveJokes };
+module.exports = { jokes, randomJoke, randomN, randomSelect, jokeById, jokeByType, sortByLikes, paginateAndSort, initializeLastJokeId, updateLastJokeId, getLastJokeId, saveJokes };
